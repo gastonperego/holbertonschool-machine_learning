@@ -2,12 +2,14 @@
 
 def matrix_shape(matrix):
     array = []
+    
+    recursive(matrix, array)
+    return array
 
-    if len(matrix) > 1:
+
+def recursive(matrix, array):
+    if not isinstance(matrix, int):
         array.append(len(matrix))
-
-    array.append(len(matrix[0]))
-    if not isinstance(matrix[0][0], int):
-        array.append(len(matrix[0][0]))
-
+        recursive(matrix[0], array) 
+        
     return array
