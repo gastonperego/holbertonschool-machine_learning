@@ -5,6 +5,9 @@
 
 
 def matrix_transpose(matrix):
+    """
+        Given a matrix, returns the trasposition
+    """
     new_matrix = []
 
     for j in range(len(matrix[0])):
