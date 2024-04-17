@@ -7,6 +7,9 @@ import matplotlib.pyplot as plt
 
 
 def frequency():
+    """
+        Creates a hist graph based on students grades in a test
+    """
 
     np.random.seed(5)
     student_grades = np.random.normal(68, 15, 50)
