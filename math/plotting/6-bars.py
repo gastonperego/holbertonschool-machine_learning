@@ -18,8 +18,8 @@ def bars():
     print(fruit)
     print(fruit[0])
 
-    plt.bar(names, fruit[0], color='r', label='apples', width=0.5)
-    plt.bar(names, fruit[1], color='y',
+    plt.bar(names, fruit[0], color='red', label='apples', width=0.5)
+    plt.bar(names, fruit[1], color='yellow',
             label='bananas', width=0.5, bottom=fruit[0])
     plt.bar(names, fruit[2], color='#ff8000',
             label='oranges', width=0.5, bottom=fruit[0] + fruit[1])
