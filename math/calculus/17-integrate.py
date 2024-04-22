@@ -9,7 +9,7 @@ def poly_integral(poly, C=0):
         Calculates the integral of a polynomial
     """
 
-    integral = [0]
+    integral = [C]
 
     for i in range(len(poly)):
         if poly[i] % (i + 1) == 0:
