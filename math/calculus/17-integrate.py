@@ -12,6 +12,12 @@ def poly_integral(poly, C=0):
     integral = [C]
     if not isinstance(poly, list) or not isinstance(C, int):
         return None
+    i = len(poly) - 1
+    
+    while i >= 0 and poly[i] == 0:
+        poly.pop(i)
+        i -= 1
+        
 
     for i in range(len(poly)):
         if poly[i] % (i + 1) == 0:
