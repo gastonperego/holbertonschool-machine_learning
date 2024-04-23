@@ -62,7 +62,7 @@ class Leaf(Node):
 
     def max_depth_below(self):
         """
-            Returns self.depth        
+            Returns self.depth
         """
         return self.depth
 
