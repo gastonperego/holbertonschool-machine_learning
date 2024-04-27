@@ -91,6 +91,9 @@ threshold={self.threshold}]\n{left}{rigth}")
 threshold={self.threshold}]\n{left}{rigth}")
 
     def left_child_add_prefix(self, text):
+        """
+            Add prefix to a left child
+        """
         lines = text.split("\n")
         new_text = "    +--" + lines[0] + "\n"
         for x in lines[1:]:
@@ -98,11 +101,14 @@ threshold={self.threshold}]\n{left}{rigth}")
         return (new_text)
 
     def right_child_add_prefix(self, text):
+        """
+            Add prefix to a right child
+        """
         lines = text.split("\n")
         new_text = "    +--" + lines[0] + "\n"
         for x in lines[1:]:
             if x != '':
-                new_text += ("      " + x) + "\n"
+                new_text += ("       " + x) + "\n"
         return (new_text)
 
 
