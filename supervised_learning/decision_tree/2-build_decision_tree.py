@@ -141,7 +141,7 @@ class Leaf(Node):
         """
             Prints a leaf node
         """
-        return (f"-> leaf [value={self.value}] ")
+        return (f"-> leaf [value={self.value}]")
 
 
 class Decision_Tree():
