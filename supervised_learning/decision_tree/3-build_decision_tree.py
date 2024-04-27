@@ -154,7 +154,7 @@ class Leaf(Node):
         """
             Prints a leaf node
         """
-        return (f"-> leaf [value={self.value}]")
+        return (f"-> leaf [value={self.value}] ")
 
     def get_leaves_below(self):
         """
