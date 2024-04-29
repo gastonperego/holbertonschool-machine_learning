@@ -15,10 +15,10 @@ class Neuron:
         """
             Init function
         """
-        if not isinstance(nx, int) and not isinstance(nx, float):
-            return TypeError('nx must be an integer')
+        if not isinstance(nx, int):
+            raise TypeError('nx must be an integer')
         elif nx < 1:
-            return ValueError('nx must be a positive integer')
+            raise ValueError('nx must be a positive integer')
 
         self.W = np.random.normal(size=(1, nx))
         self.b = 0
