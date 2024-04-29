@@ -15,7 +15,7 @@ class Neuron:
         """
             Init function
         """
-        if not isinstance(nx, int):
+        if not isinstance(nx, int) and not isinstance(nx, float):
             return TypeError('nx must be an integer')
         elif nx < 1:
             return ValueError('nx must be a positive integer')
