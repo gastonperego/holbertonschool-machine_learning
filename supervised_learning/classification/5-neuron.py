@@ -81,4 +81,4 @@ class Neuron:
         """
         m = len(Y[0])
         self.__b = self.__b - (alpha * ((1 / m) * (A - Y).sum()))
-        self.__W = self.__W - (alpha * ((1 / m) * np.matmul((A - Y), X.T)))
+        self.__W = self.__W - (alpha * ((1 / m) * np.matmul(X, (A - Y).T)).T)
