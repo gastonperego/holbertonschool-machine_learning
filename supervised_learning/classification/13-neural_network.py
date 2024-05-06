@@ -110,8 +110,8 @@ class NeuralNetwork:
         m = len(Y[0])
         self.__b1 = self.__b1 - (alpha * ((1 / m) *
                                           ((np.matmul(self.__W2.T,
-                                                      (self.__A2 - Y))) *
-                                           (self.__A1 * (1 - self.__A1))
+                                                      (A2 - Y))) *
+                                           (A1 * (1 - A1))
                                            ).sum(axis=1, keepdims=True)))
         self.__W1 = self.__W1 - (alpha * ((1 / m) * np.matmul(X,
                                                               (A1 - Y).T)).T)
