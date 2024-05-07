@@ -94,14 +94,14 @@ class DeepNeuralNetwork:
         """
 
         m = len(Y[0])
+        weights = self.__weights
+        err = cache[f"A{self.L}"] - Y
 
-        dZ = cache[f'A{self.__L}'] - Y
-        for i in range(self.__L, 0, -1):
-            A_prev = cache[f'A{i-1}']
-            dW = (1 / m) * np.dot(dZ, A_prev.T)
-            db = (1 / m) * np.sum(dZ, axis=1, keepdims=True)
-            self.__weights[f'W{i}'] -= alpha * dW
-            self.__weights[f'b{i}'] -= alpha * db
-            if i > 1:
-                dZ = np.dot(self.__weights[f'W{i}'].T, dZ) * (
-                    A_prev * (1 - A_prev))
+        for i in range(self.L, 0, -1):
+            W, b = f"W{i}", f"b{i}"
+            A = f"A{i - 1}"
+            bias_gradient = np.sum(err, axis=1, keepdims=True) / m
+            Wg = np.matmul(err, cache[A].T) / m
+            err = np.matmul(weights[W].T, err)*(cache[A]*(1-cache[A]))
+            weights[W] -= alpha * Wg
+            weights[b] -= alpha * bias_gradient
