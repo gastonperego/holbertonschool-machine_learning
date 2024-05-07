@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-    D
+    
 """
 
 import numpy as np
@@ -8,12 +8,12 @@ import numpy as np
 
 class DeepNeuralNetwork:
     """
-        D
+        
     """
 
     def __init__(self, nx, layers):
         """
-            I
+            
         """
 
         if not isinstance(nx, int):
@@ -28,7 +28,9 @@ class DeepNeuralNetwork:
         self.L = len(layers)
         self.cache = {}
         self.weights = {}
-        for i in range(self.L):
+        i = 0
+        while i < self.L:
             self.weights[f'W{i + 1}'] = np.random.normal(size=(layers[i],nx))*np.sqrt(2 / layers[i-1])
             self.weights[f'b{i + 1}'] = np.zeros((layers[i], 1))
             nx = layers[i]
+            i += 1
