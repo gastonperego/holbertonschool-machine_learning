@@ -28,7 +28,7 @@ class DeepNeuralNetwork:
         self.L = len(layers)
         self.cache = {}
         self.weights = {}
-        for i in len(self.L):
+        for i in range(self.L):
             self.weights[f'W{i + 1}'] = np.random.normal(size=(layers[i], nx)
                                                          )*np.sqrt(2 / layers[
                                                              i-1])
