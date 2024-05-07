@@ -10,6 +10,8 @@ def one_hot_decode(one_hot):
     """
         Converts a one-hot matrix into a vector of labels
     """
+    if not isinstance(one_hot, np.ndarray):
+        return None
     labels = []
     for line in one_hot.T:
         for i in range(len(line)):
