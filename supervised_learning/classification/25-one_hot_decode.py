@@ -22,4 +22,6 @@ def one_hot_decode(one_hot):
             else:
                 labels.append(i)
                 break
+    if np.array(labels).shape[0] != one_hot.shape[1]:
+        return None
     return np.array(labels)
