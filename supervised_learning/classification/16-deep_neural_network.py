@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-    Deep neural network class
+    D
 """
 
 import numpy as np
@@ -8,12 +8,12 @@ import numpy as np
 
 class DeepNeuralNetwork:
     """
-        Deep neural network class
+        D
     """
 
     def __init__(self, nx, layers):
         """
-            Init function
+            I
         """
 
         if not isinstance(nx, int):
