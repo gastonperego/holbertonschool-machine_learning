@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 
-import numpy as np
-import tensorflow
-tf = tensorflow.compat.v1
-tf.disable_eager_execution()
+import tensorflow.compat.v1 as tf
+
 
 
 def create_placeholders(nx, classes):
