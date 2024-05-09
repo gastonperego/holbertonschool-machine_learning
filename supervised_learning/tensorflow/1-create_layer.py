@@ -3,8 +3,7 @@
     Create placeholders function
 """
 
-import tensorflow
-tf = tensorflow.compat.v1
+import tensorflow.compat.v1 as tf
 tf.disable_eager_execution()
 
 
