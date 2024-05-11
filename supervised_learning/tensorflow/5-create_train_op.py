@@ -16,4 +16,3 @@ def create_train_op(loss, alpha):
     train = optimizer.minimize(loss)
 
     return train
- 
