@@ -143,11 +143,15 @@ class NeuralNetwork:
 
         step_copy = step
         costs = []
+        if verbose is True:
+            A1, A2 = self.forward_prop(X)
+            print(f'Cost after 0 iterations: {self.cost(Y, A2)}')
         for i in range(iterations + 1):
             A1, A2 = self.forward_prop(X)
+            cost = self.cost(Y, A2)
             self.gradient_descent(X, Y, A1, A2, alpha)
-            if verbose is True and (i == step_copy or i == 0):
-                print(f'Cost after {i} iterations: {self.cost(Y, A2)}')
+            if verbose is True and (i == step_copy):
+                print(f'Cost after {i} iterations: {cost}')
                 step_copy += step
             if graph is True:
                 costs.append(self.cost(Y, A2))
