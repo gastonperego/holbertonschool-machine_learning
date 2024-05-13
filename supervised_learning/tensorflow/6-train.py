@@ -17,6 +17,7 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes,
     """
         Builds, trains, and saves a neural network classifier:
     """
+    a = 100
     sess = tf.Session()
     x, y = create_placeholders(len(X_train[0]), len(Y_train[0]))
     y_pred = forward_prop(x, layer_sizes, activations)
@@ -28,7 +29,7 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes,
     sess = tf.Session()
     sess.run(init)
     for i in range(iterations + 1):
-        if i % 100 == 0 or i == 0:
+        if i == a or i == 0:
             t_loss = sess.run(loss, feed_dict={x: X_train, y: Y_train})
             t_acc = sess.run(acc, feed_dict={x: X_train, y: Y_train})
             v_loss = sess.run(loss, feed_dict={x: X_valid, y: Y_valid})
@@ -40,8 +41,9 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes,
             print(f"\tValidation Accuracy: {v_acc}")
         if i < iterations:
             sess.run(train_op, feed_dict={x: X_train, y: Y_train})
+        a += 100
 
     saver = tf.train.Saver()
-    saver.save(sess, save_path)
+    s = saver.save(sess, save_path)
 
-    return 1
+    return s
