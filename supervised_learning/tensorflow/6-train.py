@@ -28,7 +28,7 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes,
     sess = tf.Session()
     sess.run(init)
     for i in range(iterations + 1):
-        if i % 100 == 0 or i == 0 or:
+        if i % 100 == 0 or i == 0:
             t_loss = sess.run(loss, feed_dict={x: X_train, y: Y_train})
             t_acc = sess.run(acc, feed_dict={x: X_train, y: Y_train})
             v_loss = sess.run(loss, feed_dict={x: X_valid, y: Y_valid})
