@@ -28,7 +28,6 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes,
     sess = tf.Session()
     sess.run(init)
     for i in range(iterations + 1):
-        sess.run(train_op, feed_dict={x: X_train, y: Y_train})
         if i % 100 == 0 or i == 0 or i == iterations - 1:
             t_loss = sess.run(loss, feed_dict={x: X_train, y: Y_train})
             t_acc = sess.run(acc, feed_dict={x: X_train, y: Y_train})
@@ -39,6 +38,7 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes,
             print(f"\tTraining Accuracy: {t_acc}")
             print(f"\tValidation Cost: {v_loss}")
             print(f"\tValidation Accuracy: {v_acc}")
+        sess.run(train_op, feed_dict={x: X_train, y: Y_train})
 
     saver = tf.train.Saver()
     saver.save(sess, save_path)
