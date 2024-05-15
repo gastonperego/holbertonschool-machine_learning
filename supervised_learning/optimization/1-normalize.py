@@ -10,5 +10,5 @@ def normalize(X, m, s):
     """
         Normalizes a matrix
     """
-    
+
     return (X - m) / s
