@@ -11,4 +11,9 @@ def shuffle_data(X, Y):
         Shuffles the data points in two matrices the same way
     """
 
-    return np.random.permutation(X), np.random.permutation(Y)
+    m = len(X)
+    permutation = np.random.permutation(m)
+    x = X[permutation]
+    y = Y[permutation]
+
+    return x, y
