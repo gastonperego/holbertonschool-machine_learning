@@ -3,8 +3,7 @@
     Update_variables_momentum function
 """
 
-import tensorflow.compat.v1 as tf
-tf.disable_eager_execution()
+import tensorflow as tf
 
 
 def create_momentum_op(alpha, beta1):
