@@ -14,4 +14,4 @@ def sensitivity(confusion):
     for i in range(confusion.shape[0]):
         sensitivity.append(confusion[i][i] / confusion[i].sum())
 
-    return sensitivity
+    return np.array(sensitivity)
