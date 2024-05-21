@@ -15,4 +15,4 @@ def precision(confusion):
     for i in range(confusion.shape[0]):
         precision.append(confusion[i][i] / confusion.T[i].sum())
 
-    return precision
+    return np.array(precision)
