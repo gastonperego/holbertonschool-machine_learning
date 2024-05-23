@@ -11,7 +11,7 @@ def l2_reg_cost(cost, lambtha, weights, L, m):
         Calculates the cost of a neural network after l2 regularization
     """
     sum = 0
-    for key, weigth in weights.items():
-        sum += (weigth ** 2).sum()
+    for i in range(1, L + 1):
+        sum += (weights[f'W{i}'] ** 2).sum()
 
     return cost + (lambtha / (2 * m)) * sum
