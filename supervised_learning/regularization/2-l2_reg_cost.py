@@ -3,7 +3,6 @@
     l2 reg cost function
 """
 
-import numpy as np
 import tensorflow as tf
 
 
