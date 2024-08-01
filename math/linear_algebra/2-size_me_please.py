@@ -8,4 +8,4 @@ def matrix_shape(matrix):
     while (not isinstance(matrix, int)):
         shape.append(len(matrix))
         matrix = matrix[0]
-    return tuple(shape)
+    return shape
