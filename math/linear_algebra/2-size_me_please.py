@@ -5,6 +5,9 @@
 
 
 def matrix_shape(matrix):
+    """
+        Returns the shape of a given matrix
+    """
 
     shape = []
     while (not isinstance(matrix, int)):
