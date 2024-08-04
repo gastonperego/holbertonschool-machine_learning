@@ -18,7 +18,8 @@ def cat_matrices2D(mat1, mat2, axis=0):
     if axis == 0:
         if not len(mat1[0]) == len(mat2[0]):
             return None
-        new_matrix += mat2.copy()
+        for row in mat2:
+            new_matrix.append(row)
     elif axis == 1:
         if not len(mat1) == len(mat2):
             return None
