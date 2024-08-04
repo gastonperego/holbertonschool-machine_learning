@@ -10,5 +10,4 @@ def np_cat(mat1, mat2, axis=0):
         Returns a new np.ndarray that is the concatenations of the 2 matrices
         along the specified axis
     """
-    array = np.concat([mat1, mat2], axis) 
-    return array
+    return np.array(np.concat([mat1, mat2], axis))
