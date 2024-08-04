@@ -10,6 +10,8 @@ def cat_matrices2D(mat1, mat2, axis=0):
         along a speceific axis
         If the matrices are not concatenable, retunrs None
     """
+    if len(mat1) == 0 or  len(mat2) == 0:
+        return None
     new_matrix = []
     for row in mat1:
         new_matrix.append(row.copy())
