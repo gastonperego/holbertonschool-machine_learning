@@ -16,11 +16,13 @@ def cat_matrices2D(mat1, mat2, axis=0):
     for row in mat1:
         new_matrix.append(row.copy())
     if axis == 0:
+        print('axis 0')
         if not len(mat1[0]) == len(mat2[0]):
             return None
         for row in mat2:
             new_matrix.append(row)
     elif axis == 1:
+        print('axis 1')
         if not len(mat1) == len(mat2):
             return None
         for i in range(len(mat1)):
