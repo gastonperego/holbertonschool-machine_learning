@@ -23,7 +23,7 @@ def cat_matrices2D(mat1, mat2, axis=0):
     elif axis == 1:
         if not len(mat1) == len(mat2):
             return None
-        for i in range(len(new_matrix)):
+        for i in range(len(mat1)):
             new_matrix[i].append(mat2[i][0])
     else:
         return None
