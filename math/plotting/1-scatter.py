@@ -18,5 +18,7 @@ def scatter():
     plt.figure(figsize=(6.4, 4.8))
 
     plt.scatter(x, y, c='m', marker='.')
-    plt.savefig('plot.png')
+    plt.xlabel('Height (in)')
+    plt.ylabel('Weight (lbs)')
+    plt.title('Men\'s Height vs Weight')
     plt.show()
