@@ -18,11 +18,12 @@ def bars():
     plt.ylabel('Quantity of Fruit')
     plt.ylim((0, 80))
     plt.yticks([0, 10, 20, 30, 40, 50, 60, 70, 80])
+    plt.title('Number of Fruit per Person')
 
-    plt.bar(['Farrah', 'Fred', 'Felicia'], fruit[0], color='r',
+    plt.bar(['Farrah', 'Fred', 'Felicia'], fruit[0], color='red',
             label='apples', width=0.5)
     plt.bar(['Farrah', 'Fred', 'Felicia'], fruit[1], bottom=fruit[0],
-            color='y', label='bananas', width=0.5)
+            color='yellow', label='bananas', width=0.5)
     plt.bar(['Farrah', 'Fred', 'Felicia'], fruit[2], bottom=fruit[0]
             + fruit[1], color='#ff8000', label='oranges', width=0.5)
     plt.bar(['Farrah', 'Fred', 'Felicia'], fruit[3], bottom=fruit[0]
