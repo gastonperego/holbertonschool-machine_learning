@@ -34,18 +34,21 @@ def all_in_one():
 
     np.random.seed(5)
     student_grades = np.random.normal(68, 15, 50)
+    
+    fig = plt.figure(figsize=(6.4, 5.6))
 
-    plt.subplot2grid((3, 2), (0, 0))
+    plt.subplot(3, 2, 1)
     plt.plot(y0, 'r')
     plt.xlim((0, 10))
+    plt.yticks([0, 500, 1000])
 
-    plt.subplot2grid((3, 2), (0, 1))
+    plt.subplot(3, 2, 2)
     plt.scatter(x1, y1, c='m')
     plt.xlabel('Height (in)', size='small')
     plt.ylabel('Weight (lbs)', size='small')
     plt.title('Men\'s Height vs Weight', size='small')
 
-    plt.subplot2grid((3, 2), (1, 0))
+    plt.subplot(3, 2, 3)
     plt.plot(x2, y2)
     plt.xlabel('Time (years)', size='small')
     plt.ylabel('Fraction Remaining', size='small')
@@ -53,7 +56,7 @@ def all_in_one():
     plt.xlim((0, 28650))
     plt.yscale('log')
 
-    plt.subplot2grid((3, 2), (1, 1))
+    plt.subplot(3, 2, 4)
     plt.plot(x3, y31, 'r--', label='C-14')
     plt.plot(x3, y32, 'g-', label='Ra-226')
     plt.title('Exponential Decay of Radioactive Elements', size='small')
@@ -70,9 +73,11 @@ def all_in_one():
     plt.ylabel('Number of Students', size='small')
     plt.title('Project A', size='small')
     plt.xticks(bins)
+    plt.yticks([0, 10, 20, 30])
     plt.ylim((0, 30))
     plt.xlim((0, 100))
 
+    fig.suptitle('All in One')
     plt.tight_layout()
     plt.savefig('plot.png')
     plt.show()
