@@ -79,5 +79,4 @@ def all_in_one():
 
     fig.suptitle('All in One')
     plt.tight_layout()
-    plt.savefig('plot.png')
     plt.show()
