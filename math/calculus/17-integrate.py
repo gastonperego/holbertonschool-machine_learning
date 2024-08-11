@@ -19,7 +19,7 @@ def poly_integral(poly, C=0):
         i -= 1
 
     for i in range(len(poly)):
-        if poly[i] % (i + 1) == 0: 
+        if poly[i] % (i + 1) == 0:
             integral.append(int(poly[i] / (i + 1)))
         else:
             integral.append(poly[i] / (i + 1))
