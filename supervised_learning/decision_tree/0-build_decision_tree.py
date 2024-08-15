@@ -1,9 +1,26 @@
 #!/usr/bin/env python3
+"""
+    Class Node: It is the class that represents a node of the tree.
+
+    - max_depth_below: returns the max depth below that node
+
+    Class Leaf: It is the class that represents a leaf of a tree
+
+    - max_depth_below: Returns the depth of the leaf (self.depth)
+
+    Class DecisionTree: It is very similar to the node class, but this node
+    is the root of the tree
+"""
 
 import numpy as np
 
+
 class Node:
-    def __init__(self, feature=None, threshold=None, left_child=None, right_child=None, is_root=False, depth=0):
+    def __init__(self, feature=None, threshold=None, left_child=None,
+                 right_child=None, is_root=False, depth=0):
+        """
+            Init function
+        """
         self.feature = feature
         self.threshold = threshold
         self.left_child = left_child
@@ -13,7 +30,7 @@ class Node:
         self.sub_population = None
         self.depth = depth
 
-    def max_depth_below(self) :
+    def max_depth_below(self):
         """
             Returns the depth below the given node
         """
@@ -24,18 +41,30 @@ class Node:
 
         return max(right, left)
 
+
 class Leaf(Node):
     def __init__(self, value, depth=None):
+        """
+            Init function
+        """
         super().__init__()
         self.value = value
         self.is_leaf = True
         self.depth = depth
 
-    def max_depth_below(self) :
+    def max_depth_below(self):
+        """
+            Returns the depth of the leaf
+        """
         return self.depth
 
+
 class Decision_Tree():
-    def __init__(self, max_depth=10, min_pop=1, seed=0, split_criterion="random", root=None):
+    def __init__(self, max_depth=10, min_pop=1,
+                 seed=0, split_criterion="random", root=None):
+        """
+            Init function
+        """
         self.rng = np.random.default_rng(seed)
         if root:
             self.root = root
@@ -48,5 +77,8 @@ class Decision_Tree():
         self.split_criterion = split_criterion
         self.predict = None
 
-    def depth(self) :
+    def depth(self):
+        """
+            Returns the depth of the tree
+        """
         return self.root.max_depth_below()
